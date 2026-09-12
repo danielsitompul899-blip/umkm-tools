@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../" class="back-btn">← Kembali</a>
+            <h1>💰 Expense Tracker</h1>
+            <p>Catat pemasukan & pengeluaran UMKM</p>
+        </header>
+
+        <div class="balance-card">
+            <h2>Saldo Saat Ini</h2>
+            <div class="balance-amount" id="saldo">Rp 0</div>
+            <div class="summary">
+                <div class="summary-item income">
+                    <div class="summary-label">Pemasukan</div>
+                    <div class="summary-value" id="total-pemasukan">Rp 0</div>
+                </div>
+                <div class="summary-item expense">
+                    <div class="summary-label">Pengeluaran</div>
+                    <div class="summary-value" id="total-pengeluaran">Rp 0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>➕ Tambah Transaksi</h3>
+            <form id="transaction-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Jenis</label>
+                        <select id="jenis" required>
+                            <option value="income">Pemasukan</option>
+                            <option value="expense">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah (Rp)</label>
+                        <input type="number" id="jumlah" placeholder="500000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select id="kategori" required>
+                            <option value="penjualan">Penjualan</option>
+                            <option value="modal">Modal</option>
+                            <option value="bahan-baku">Bahan Baku</option>
+                            <option value="operasional">Operasional</option>
+                            <option value="gaji">Gaji</option>
+                            <option value="listrik-air">Listrik & Air</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <input type="text" id="keterangan" placeholder="Penjualan produk A" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <label>Filter: </label>
+            <select id="filter-kategori" onchange="renderTransactions()">
+                <option value="all">Semua</option>
+                <option value="penjualan">Penjualan</option>
+                <option value="modal">Modal</option>
+                <option value="bahan-baku">Bahan Baku</option>
+                <option value="operasional">Operasional</option>
+                <option value="gaji">Gaji</option>
+                <option value="listrik-air">Listrik & Air</option>
+                <option value="marketing">Marketing</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+        </div>
+
+        <div class="transactions-list" id="transactions-list">
+            <div class="no-transactions"><p>Belum ada transaksi</p></div>
+        </div>
+
+        <button class="clear-btn" onclick="clearAllData()">🗑️ Hapus Semua</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
