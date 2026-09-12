@@ -4,9 +4,9 @@ Kumpulan tools JavaScript gratis untuk UMKM.
 
 ## 🚀 Demo
 
-- **Home**: https://USERNAME.github.io/umkm-tools/
-- **Calculator**: https://USERNAME.github.io/umkm-tools/calculator-tools/
-- **Expense**: https://USERNAME.github.io/umkm-tools/expense-tracker/
+- **Home**: https://danielsitompul899-blip.github.io/umkm-tools/
+- **Calculator**: https://danielsitompul899-blip.github.io/umkm-tools/calculator-tools/
+- **Expense**: https://danielsitompul899-blip.github.github.io/umkm-tools/expense-tracker/
 
 ## 📋 Fitur
 
