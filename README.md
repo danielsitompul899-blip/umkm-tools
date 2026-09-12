@@ -6,7 +6,7 @@ Kumpulan tools JavaScript gratis untuk UMKM.
 
 - **Home**: https://danielsitompul899-blip.github.io/umkm-tools/
 - **Calculator**: https://danielsitompul899-blip.github.io/umkm-tools/calculator-tools/
-- **Expense**: https://danielsitompul899-blip.github.github.io/umkm-tools/expense-tracker/
+- **Expense**: https://danielsitompul899-blip.github.io/umkm-tools/expense-tracker/
 
 ## 📋 Fitur
 
