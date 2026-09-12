@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator UMKM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../" class="back-btn">← Kembali</a>
+            <h1>🧮 Kalkulator UMKM</h1>
+            <p>6 alat gratis untuk menghitung bisnis Anda</p>
+        </header>
+
+        <div class="calculator-grid">
+            <!-- 1 -->
+            <div class="calculator-card">
+                <h2>💰 Harga Jual</h2>
+                <div class="form-group">
+                    <label>Modal per Unit (Rp)</label>
+                    <input type="number" id="hj-modal" placeholder="10000">
+                </div>
+                <div class="form-group">
+                    <label>Margin (%)</label>
+                    <input type="number" id="hj-margin" placeholder="30">
+                </div>
+                <button class="btn" onclick="hitungHargaJual()">Hitung</button>
+                <div class="result" id="result-hj" style="display:none;">
+                    <div class="result-item"><span>Harga Jual:</span><span id="hj-harga" class="highlight">-</span></div>
+                    <div class="result-item"><span>Keuntungan:</span><span id="hj-untung">-</span></div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="calculator-card">
+                <h2>📈 Keuntungan</h2>
+                <div class="form-group">
+                    <label>Modal (Rp)</label>
+                    <input type="number" id="kg-modal" placeholder="500000">
+                </div>
+                <div class="form-group">
+                    <label>Pendapatan (Rp)</label>
+                    <input type="number" id="kg-pendapatan" placeholder="750000">
+                </div>
+                <button class="btn" onclick="hitungKeuntungan()">Hitung</button>
+                <div class="result" id="result-kg" style="display:none;">
+                    <div class="result-item"><span>Keuntungan:</span><span id="kg-untung" class="highlight">-</span></div>
+                    <div class="result-item"><span>Persentase:</span><span id="kg-persen">-</span></div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="calculator-card">
+                <h2>🏷️ Diskon</h2>
+                <div class="form-group">
+                    <label>Harga Awal (Rp)</label>
+                    <input type="number" id="kd-harga" placeholder="100000">
+                </div>
+                <div class="form-group">
+                    <label>Diskon (%)</label>
+                    <input type="number" id="kd-diskon" placeholder="20">
+                </div>
+                <button class="btn" onclick="hitungDiskon()">Hitung</button>
+                <div class="result" id="result-kd" style="display:none;">
+                    <div class="result-item"><span>Potongan:</span><span id="kd-potong">-</span></div>
+                    <div class="result-item"><span>Harga Akhir:</span><span id="kd-akhir" class="highlight">-</span></div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="calculator-card">
+                <h2>📊 Margin</h2>
+                <div class="form-group">
+                    <label>Harga Jual (Rp)</label>
+                    <input type="number" id="km-harga" placeholder="150000">
+                </div>
+                <div class="form-group">
+                    <label>Modal (Rp)</label>
+                    <input type="number" id="km-modal" placeholder="100000">
+                </div>
+                <button class="btn" onclick="hitungMargin()">Hitung</button>
+                <div class="result" id="result-km" style="display:none;">
+                    <div class="result-item"><span>Margin:</span><span id="km-margin" class="highlight">-</span></div>
+                    <div class="result-item"><span>Keuntungan:</span><span id="km-untung">-</span></div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="calculator-card">
+                <h2>💵 Modal</h2>
+                <div class="form-group">
+                    <label>Bahan Baku (Rp)</label>
+                    <input type="number" id="kmod-bahan" placeholder="200000">
+                </div>
+                <div class="form-group">
+                    <label>Tenaga Kerja (Rp)</label>
+                    <input type="number" id="kmod-tenaga" placeholder="100000">
+                </div>
+                <div class="form-group">
+                    <label>Lain-lain (Rp)</label>
+                    <input type="number" id="kmod-lain" placeholder="50000">
+                </div>
+                <button class="btn" onclick="hitungModal()">Hitung</button>
+                <div class="result" id="result-kmod" style="display:none;">
+                    <div class="result-item"><span>Total Modal:</span><span id="kmod-total" class="highlight">-</span></div>
+                    <p class="info-text">Per unit (10 produk): <span id="kmod-perunit">-</span></p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="calculator-card">
+                <h2>📦 Kebutuhan Bahan</h2>
+                <div class="form-group">
+                    <label>Target Produksi</label>
+                    <input type="number" id="kb-target" placeholder="50">
+                </div>
+                <div class="form-group">
+                    <label>Bahan per Unit</label>
+                    <input type="number" id="kb-perunit" placeholder="200">
+                </div>
+                <div class="form-group">
+                    <label>Satuan</label>
+                    <select id="kb-satuan">
+                        <option value="gram">Gram</option>
+                        <option value="kg">Kilogram</option>
+                        <option value="liter">Liter</option>
+                        <option value="ml">Mililiter</option>
+                        <option value="pcs">Pcs</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="hitungKebutuhanBahan()">Hitung</button>
+                <div class="result" id="result-kb" style="display:none;">
+                    <div class="result-item"><span>Total:</span><span id="kb-total" class="highlight">-</span></div>
+                    <p class="info-text">Beli (+10%): <span id="kb-beli">-</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
