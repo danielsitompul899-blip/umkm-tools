@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Tools - Alat Gratis untuk Bisnis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #667eea; font-size: 2.5rem; margin-bottom: 15px; }
+        .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .tool-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        .tool-icon { font-size: 3rem; margin-bottom: 15px; }
+        .tool-title { font-size: 1.3rem; font-weight: 700; color: #667eea; margin-bottom: 10px; }
+        .tool-desc { color: #666; font-size: 0.95rem; line-height: 1.5; }
+        .features {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .features h3 { color: #667eea; margin-bottom: 15px; }
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .features li { padding: 8px 0; color: #555; }
+        .features li::before { content: "✓ "; color: #4ade80; font-weight: 700; }
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .github-link:hover { background: #667eea; color: white; }
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 UMKM Tools</h1>
+        <p class="subtitle">Kumpulan alat gratis berbasis JavaScript untuk membantu pelaku UMKM mengelola bisnis dengan lebih mudah.</p>
+
+        <div class="tools-grid">
+            <a href="calculator-tools/" class="tool-card">
+                <div class="tool-icon">🧮</div>
+                <div class="tool-title">Calculator Tools</div>
+                <div class="tool-desc">6 kalkulator bisnis: harga jual, keuntungan, diskon, margin, modal, dan kebutuhan bahan</div>
+            </a>
+            <a href="expense-tracker/" class="tool-card">
+                <div class="tool-icon">💰</div>
+                <div class="tool-title">Expense Tracker</div>
+                <div class="tool-desc">Pencatat keuangan UMKM dengan fitur pemasukan, pengeluaran, dan laporan otomatis</div>
+            </a>
+        </div>
+
+        <div class="features">
+            <h3>✨ Fitur Unggulan</h3>
+            <ul>
+                <li>100% Gratis</li>
+                <li>Tanpa Login</li>
+                <li>Responsive Design</li>
+                <li>Offline Capable</li>
+                <li>Data Lokal</li>
+                <li>Mobile Friendly</li>
+                <li>Fast & Lightweight</li>
+                <li>Open Source</li>
+            </ul>
+        </div>
+
+        <a href="https://github.com/USERNAME/umkm-tools" class="github-link" target="_blank">View on GitHub →</a>
+    </div>
+</body>
+</html>
